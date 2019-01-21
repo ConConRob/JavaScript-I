@@ -76,7 +76,9 @@ console.log(`The last car is a ${lastCar.car_make} ${lastCar.car_model}`);
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
 const carModels = [];
 for(let i = 0; i< inventory.length-1; i++){
-    carModels.push(inventory[i].car_model);
+    let model = inventory[i].car_model;
+    //make sure that every model is capitalized
+    carModels.push(model.charAt(0).toUpperCase()+model.slice(1));
 }
 carModels.sort();
 console.log(carModels);
